@@ -88,4 +88,4 @@ m2 <- matrix(5:8, nrow=2); m2
 m1 * m2 # multiplication
 m1 %*% m2 # product
 solve(m1) # inverse
-t(m1) # transpose
+# t(m1) # transpose

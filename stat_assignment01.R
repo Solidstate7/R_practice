@@ -29,9 +29,9 @@ barplot(freq_table, main='Distribution of atmospheric carbon dioxide concentrati
 
 set.seed(2024)
 
-p <- 0.7 # Population Ratio
+p <- 0.7 # Population Proportion
 
-sample_sizes <- c(10,20,50,75,100,200)
+sample_sizes <- c(10, 20, 50, 75, 100, 200)
 n_reps <- 1000
 
 for (n in sample_sizes) {
@@ -39,8 +39,10 @@ for (n in sample_sizes) {
   for (i in  1:n_reps) {
     sample_data <- sample(c(1,0), size = n, replace = T, prob = c(p, 1-p))
     sample_props[i] <- mean(sample_data)
+    cat(length(sample_data), " ")
   }
   cat("Sample Size:", n, "\n")
-  cat("Sample Ratio Mean", mean(sample_props), "\n")
-  cat("Sample Ratio Standard Deviation", sd(sample_props), "\n\n")
+  cat("Sample Proportion Mean", mean(sample_props), "\n")
+  cat("Sample Proportion Standard Deviation", sd(sample_props), "\n\n")
 }
+
